@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar class="ion-toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button class="ion-button"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-content class="body">
+    <div class="content">
+      <ion-title class="title">Food</ion-title>
+      <ion-title class="title-2">Delivery</ion-title>
+    </div> 
+        <input class="search" type="search" name="filterPost" placeholder="Search...">
+       <div>
+         <div class="scrolling-wrapper">
+          <div class="card style-categorie" *ngFor="let category of categories">
+              <ion-img class="item-img-category"  [src]="category.icon"></ion-img>
+              <ion-label class="name-product">{{ category.name }}</ion-label> <hr />
+              <ion-label class="name-product">{{ category.quantity }}</ion-label>
+          </div>
+        </div>
+       </div>  
+    <div class="ion-padding">
+      <ion-list *ngFor="let product of products">
+        <div class="wrapper">
+          <ion-thumbnail class="img-product">
+            <ion-img class="item-img-product" [src]="product.image"></ion-img>
+          </ion-thumbnail>
+          <ion-label class="name-product">{{ product.name }}</ion-label> <ion-label  class="price-product">{{ product.price }}</ion-label>  
+        </div>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-content>

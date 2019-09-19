@@ -1,0 +1,70 @@
+<ion-header>
+  <ion-toolbar class="ion-toolbar">
+    <ion-buttons slot="start">
+      <ion-icon class="ion-button" name="arrow-back" (click)=" backClicked()"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<div class="content">
+  <ion-title class="title">My</ion-title>
+  <ion-title class="title-2">Order</ion-title>
+</div>
+<ion-content class="body">
+  <ion-app>
+    <ion-content>
+      <ion-grid>
+        <div *ngFor="let item of listProducts  | slice:0:3">
+          <ion-row>
+            <ion-col class="img-products">
+              <img class="item-img-product" [src]="item.image" />
+            </ion-col>
+            <ion-col size="2" class="list-products">
+              <span>x 1</span>
+            </ion-col>
+            <ion-col class="list-products">
+              <div>{{ item.name}}</div>
+            </ion-col>
+            <ion-col size="3" class="list-products">
+              <div>$ {{ item.price }}</div>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-grid>
+      <div>
+        <ion-grid>
+          <ion-row>
+            <ion-col class="total-products">
+              <img class="item-img-delivery" src="../../assets/icons/car.svg" />
+            </ion-col>
+            <ion-col class="delivery">
+              <div>Delivery</div>
+            </ion-col>
+            <ion-col size="3" class="price">
+              <div>$ 00</div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="total">
+              <div>Total</div>
+            </ion-col>
+            <ion-col size="3" class="total-price">
+              <div>$ 00</div>
+            </ion-col>
+          </ion-row>
+          <hr />
+          <ion-row class="content-person">
+            <ion-col class="person">
+              <div>Persons</div>
+            </ion-col>
+            <ion-col size="3" class="contador">
+              <div (click)="sumar()">+</div>
+              <div>{{ contador }}</div>
+              <div (click)="restar()">-</div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+      <button ion-button class="btn-next" (click)="next()"><h5 class="time">15-25 min</h5> <h5 class="tile-btn">Next</h5></button>
+    </ion-content>
+  </ion-app>
+</ion-content>
